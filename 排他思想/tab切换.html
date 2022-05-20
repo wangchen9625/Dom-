@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <title>Title</title>
+  <style>
+    .tab_list li {
+      float: left;
+      height: 39px;
+      line-height: 39px;
+      padding: 0 40px;
+      text-align: center;
+      cursor: pointer;
+      list-style: none;
+    }
+    
+    .tab_list .current {
+      background-color: #c81623;
+      color: #ffffff;
+    }
+    
+    .item {
+      padding: 50px 0 0 50px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab">
+    <div class="tab_list">
+      <ul>
+        <li class="current">商品介绍</li>
+        <li>规格与包装</li>
+        <li>售后保障</li>
+        <li>商品评价</li>
+        <li>手机社区</li>
+      </ul>
+    </div>
+    <div class="tab_con">
+      <div class="item" style="display: block">
+        商品介绍模块内容
+      </div>
+      <div class="item">
+        规格与包装模块内容
+      </div>
+      <div class="item">
+        售后保障模块内容
+      </div>
+      <div class="item">
+        商品评价模块内容
+      </div>
+      <div class="item">
+        手机社区模块内容
+      </div>
+    </div>
+  </div>
+  <script>
+    //排他思想
+    let btnlist = document.querySelector('.tab_list').querySelectorAll('li')
+    let itemlist = document.querySelectorAll('.item');
+    console.log(btnlist);
+    console.log(itemlist);
+    let curbtn = 0;
+    for(let i = 0; i < btnlist.length; i++){
+        btnlist[i].onclick = function(){
+            btnlist[curbtn].setAttribute('class','');
+            itemlist[curbtn].style.display = 'none';
+            this.setAttribute('class','current');
+            itemlist[i].style.display = 'block';
+            curbtn = i;
+        }
+    }
+
+  </script>
+</body>
+</html>

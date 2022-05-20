@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        let ul = document.querySelector('ul');
+        let lili = ul.children[0].cloneNode()//只复制标签或者参数是false 为浅拷贝,值复制标签,不复制内容
+        let li2 = ul.children[0].cloneNode(true);
+        ul.appendChild(lili);
+        ul.appendChild(li2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../图片库案例/imgstore.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .picstore{
+            width: 1200px;
+            height: 800px;
+            margin: 180px auto;
+        }
+        .lefta{
+            float: left;
+            margin-left: 20px;
+            border: 1px solid black;
+        }
+        .lefta ul li{
+            padding: 10px;
+        }
+        .picshow{
+            float: right;
+            height: 100%;
+            width: 700px;
+            border: 1px solid orange;
+        }
+        .picshow img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="picstore">
+        <div class="lefta">
+            <ul>
+                <li><a href="images/1.png" onclick="WhichPic(this); return false">第一章图片</a></li>
+                <!-- 没有写return false  则 a点击事件依然会跳转页面 -->
+                <li><a href="images/2.jpg" onclick="WhichPic(this);">第二张图片</a></li>
+                <li><a href="images/3.jpg" onclick="WhichPic(this); return false">第三张图片</a></li>
+            </ul>
+        </div>
+        <div class="picshow">
+            <img src="" alt="" id="imgtarget">
+        </div>
+    </div>
+</body>
+</html>

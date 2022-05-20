@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">盒子</div>
+    <div class="box">盒子</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+    
+    <script>
+        // 1.getElementsByClassName 通过类名得到
+        let boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+        // 2.querySelector 返回指定选择器的第一个元素 注意 只得到第一个元素
+        // 类选择器 用.类型
+        let firstbox = document.querySelector(".box");
+        console.log(firstbox);
+        // id 选择器 用#类名
+        let nav = document.querySelector("#nav");
+        console.log(nav);
+        //  直接标签名称
+        let firstli = document.querySelector('li');
+        // querySelectorAll 返回所有的选择器元素 返回的是一个数组 ,不管实际是不是只有0或1个
+        let allbox = document.querySelectorAll('.box');
+        console.log(allbox);
+        let liall = document.querySelectorAll('li');
+        console.log(liall);
+        // 不考虑兼容性  querySeletor
+        
+    </script>
+</body>
+</html>

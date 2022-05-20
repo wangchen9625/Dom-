@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <ul>
+        <li>ul里面的第1个li</li>
+        <li>ul里面的第2个li</li>
+        <li>ul里面的第3个li</li>
+        <li>ul里面的第4个li</li>
+    </ul>
+    <ol id="ol">
+        <li>ol里面的第1个li</li>
+        <li>ol里面的第2个li</li>
+        <li>ol里面的第3个li</li>
+        <li>ol里面的第4个li</li>
+    </ol>
+    <script>
+        // 1.返回的是 获取过来元素对象的集合 以伪数组的形式存储的
+        // 可以获得 ul 中li 和ol 中的li 所有的li
+        let lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        // 2.想要一次打印里面的元素,可以采取遍历的方式
+        for(let i = 0; i < lis.length; i++){
+            console.log(lis[i]);
+        }
+        // 3.注意返回的是数组,即使页面里面只有一个li ,也是数组,访问时,依然通过索引的方式 lis[0]
+        // 4.如果想得到ol的li 可以用下面的方法
+        // let ol = document.getElementsByTagName('ol');
+        // let olli_list = ol[0].getElementsByTagName('li');
+        // 可以通过二维数组的形式访问 各个元素 但是上面这种方法一般不适合, 我们可以给ol 一个id 如下办法
+        let ol = document.getElementById('ol');
+        let olli_list = ol.getElementsByTagName('li');
+    </script>
+</body>
+</html>

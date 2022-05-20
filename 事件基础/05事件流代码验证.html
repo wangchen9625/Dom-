@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+    <script>
+        //dom事件流 三个阶段
+        //1 js代码 只能执行捕获或者冒泡其中一个阶段
+        // 2 onclick 和 attachEvent(ie) 只能得到冒泡阶段
+        // 3. 捕获阶段,如果addEventListener第是三个参数是 true ,那么处于捕获阶段
+        // 以下代码 先弹出 fathen 再 弹出儿子 
+        // 捕获阶段 body -> father -> son
+        let son = document.querySelector('.son');
+        son.addEventListener('click',function(){
+            alert('son');
+        })
+        let father = document.querySelector('.father');
+        father.addEventListener('click',function(){
+            alert('father');
+        })
+        // 4 如果第3个参数是false 或者省略,那么就处于冒泡阶段 下面的代码就会先弹出son , 再等到father
+        // 因为js只能执行一个阶段,所以下面的代码注释掉.但我们要明白其机理
+        // let son = document.querySelector('.son');
+        // son.addEventListener('click',function(){
+        //     alert('son');
+        // })
+        // let father = document.querySelector('.father');
+        // father.addEventListener('click',function(){
+        //     alert('father');
+        // })
+    </script>
+</body>
+</html>

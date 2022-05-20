@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background: url(images/1.jpg) no-repeat center top;
+        }
+        .baidu{
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+            overflow: hidden;
+        }
+        .baidu ul li{
+            width: 25%;
+            float: left;
+            cursor: pointer;
+        }
+        .baidu img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="baidu">
+        <ul>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        let lilist = document.querySelector('.baidu').querySelectorAll('img');//注意这里是img 不能写成li
+        console.log(lilist);
+        for(let i = 0; i < lilist.length; i++){
+            lilist[i].onclick = function(){
+                console.log(this.src);
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <ul class="nav">
+        <li>
+          <a href = "#">微博</a>
+          <ul>
+            <li>
+              <a href = "">私信</a>
+            </li>
+            <li>
+              <a href = "">评论</a>
+            </li>
+            <li>
+              <a href = "">@我</a>
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+      <script>
+          let nav = document.querySelector('.nav');
+          let list = nav.children;//得到第一层li
+          console.log(list);
+          for(let i = 0; i < list.length; i++){
+              list[i].onmouseover = function(){
+                    this.children[1].style.display = 'block';// 跳过微博两个字 选到第2个孩子 即为 ul
+              }
+              list[i].onmouseout = function(){
+                  this.children[1].style.display = 'none';
+              }
+          }
+      </script>
+</body>
+</html>

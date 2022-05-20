@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <script>
+        let btns = document.querySelectorAll('button');
+        // 传统注册方式
+        // 利用on开头的时间  onclick
+        // 特点:注册事件的唯一性
+        // 同一个元素同一个事件只能设置一处处理函数.后面的覆盖前面的
+        btns[0].onclick = function(){
+            alert('hi');
+        }
+        // 唯一性的原则 后面的会把前面的覆盖掉
+        btns[0].onclick = function(){
+            alert('how are you');
+        }
+        // 方法监听注册事件
+        // w3c标准推荐方式
+        // addEventListener() 它是一个方法(更适合尤其是在移动端)
+        // ie9之前不支持,可用 attachEvent() 代替
+        // 特点 同一个元素同一个事件可以注册多个监听器
+        // EventTarget.addEvenListener(type,listener,[useCapture])
+        // type:事件类型字符串,比例 click mouseover 注意不要带on
+        // listener: 事件处理函数,事件发生时,会调用该监听函数
+        // useCapture: bool类型,可选
+        btns[1].addEventListener("click",function(){
+            alert(22);
+        })
+        btns[1].addEventListener("click",function(){
+            alert(33);
+        })
+
+        // attachEvent 不要用
+    </script>
+</body>
+</html>

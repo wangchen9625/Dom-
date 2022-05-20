@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+          width: 400px;
+          height: 400px;
+          background-color: deeppink;
+        }
+        .son {
+          width: 200px;
+          height: 200px;
+          background-color: lightskyblue;
+        }
+      </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son</div>
+      </div>
+      <script>
+          //常见事件对象的属性和方法
+            //阻止冒泡 dom推荐的标准 stopPropagation()
+        let son = document.querySelector('.son');
+        let father = document.querySelector('.father');
+        son.addEventListener('click',function(e){
+            alert('son');
+            e.stopPropagation();//stop 停止  Propagation 传播  弹一次就不再冒泡了
+            e.cancelBubble = true;//非标准 cancel 取消 bubble冒泡
+        });
+        father.addEventListener('click',function(){
+            alert('father');
+        },false);
+        document.addEventListener('click', function () {
+            alert('document');
+        })
+      </script>
+</body>
+</html>
